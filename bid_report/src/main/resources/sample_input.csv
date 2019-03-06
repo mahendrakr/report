@@ -1,0 +1,21 @@
+City,Country,Gender,Currency,Average Income
+Chennai,IND,M,INR,6000
+Chennai,IND,M,INR,7000
+Chennai,IND,F,INR,5000
+Chennai,IND,F,INR,9000
+Chennai,IND,M,INR,5515
+Banglore,IND,M,INR,7512
+Banglore,IND,F,INR,7513
+Banglore,IND,M,INR,7514
+Hyderabad,IND,M,INR,6000
+Hyderabad,IND,F,INR,6001
+New Delhi,,M,INR,4000
+New Delhi,,F,INR,4001
+Bostan,USA,M,USD,700
+Bostan,USA,F,USD,400
+Bostan,USA,M,USD,500
+Bostan,USA,F,USD,600
+London,UK,F,GBP,6000
+London,UK,M,GBP,6001
+London,UK,F,GBP,6002
+London,UK,M,GBP,6003
