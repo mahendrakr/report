@@ -2,17 +2,22 @@ package com.sapient.bid_report.model;
 
 import java.math.BigDecimal;
 
+/**
+ * 
+ * This class represent the state of the business object.
+ *
+ */
 public class IncomeDetails {
 	private String city;
 	private String country;
 	private String gender;
 	private BigDecimal amount;
 	private String currency;
-	
+
 	public IncomeDetails() {
 		super();
 	}
-	
+
 	public IncomeDetails(String city, String country, String gender, BigDecimal amount, String currency) {
 		super();
 		this.city = city;
@@ -25,35 +30,43 @@ public class IncomeDetails {
 	public String getCity() {
 		return city;
 	}
+
 	public void setCity(String city) {
 		this.city = city;
 	}
+
 	public String getCountry() {
 		return country;
 	}
+
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
 	public String getGender() {
 		return gender;
 	}
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
 	public BigDecimal getAmount() {
 		return amount;
 	}
+
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
+
 	public String getCurrency() {
 		return currency;
 	}
+
 	public void setCurrency(String currency) {
 		this.currency = currency;
 	}
-	
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -65,6 +78,7 @@ public class IncomeDetails {
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -101,11 +115,11 @@ public class IncomeDetails {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "IncomeDetails [city=" + city + ", country=" + country + ", gender=" + gender + ", amount=" + amount
 				+ ", currency=" + currency + "]";
 	}
-
 
 }

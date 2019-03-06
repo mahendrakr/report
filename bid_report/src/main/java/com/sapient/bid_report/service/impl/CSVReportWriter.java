@@ -13,10 +13,17 @@ import com.opencsv.CSVWriter;
 import com.sapient.bid_report.constant.Constant;
 import com.sapient.bid_report.model.IncomeDetails;
 import com.sapient.bid_report.service.ReportWriter;
-
+/**
+ * 
+ * This class write data to CSV file.
+ *
+ */
 public class CSVReportWriter implements ReportWriter<List<IncomeDetails>> {
 
 private static final Logger log= LoggerFactory.getLogger(CSVReportWriter.class);
+/**
+ * {@inheritDoc}
+ */
 	@Override
 	public void writeReport(String fileName, List<IncomeDetails> incomeDetails) {
 	      CSVWriter writer=null;
@@ -41,7 +48,11 @@ private static final Logger log= LoggerFactory.getLogger(CSVReportWriter.class);
 	     
 	       
 	}
-
+/**
+ * 
+ * @param incomeDetails {@link IncomeDetails}
+ * @return List<String[]> list of string arrays.
+ */
 	private static List<String[]> toStringArray(List<IncomeDetails> incomeDetails) {
 		List<String[]> records = new ArrayList<String[]>();
 

@@ -14,10 +14,17 @@ import com.sapient.bid_report.constant.Constant;
 import com.sapient.bid_report.model.IncomeDetails;
 import com.sapient.bid_report.service.ReportReader;
 
+/**
+ * 
+ * This class read the CSV file.
+ *
+ */
 public class CSVReportReader implements ReportReader {
-	private static final Logger log= LoggerFactory.getLogger(CSVReportWriter.class);
-	
+	private static final Logger log = LoggerFactory.getLogger(CSVReportWriter.class);
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public List<IncomeDetails> readReport(String fileName) {
 		CSVReader reader = null;
@@ -29,7 +36,7 @@ public class CSVReportReader implements ReportReader {
 				IncomeDetails record = new IncomeDetails();
 				if (nextLine != null) {
 					record.setCity(nextLine[0]);
-					if (nextLine[1].length()==0) {
+					if (nextLine[1].length() == 0) {
 						record.setCountry(nextLine[0]);
 					} else {
 						record.setCountry(nextLine[1]);
@@ -42,31 +49,28 @@ public class CSVReportReader implements ReportReader {
 				}
 			}
 		} catch (IOException e) {
-			log.error("Exception occur while reading the file: {}",e);
+			log.error("Exception occur while reading the file: {}", e);
 		} finally {
 			if (reader != null)
 				try {
 					reader.close();
 				} catch (IOException e) {
-					log.error("Exception occuring file closing the resource: {}",e);
+					log.error("Exception occuring file closing the resource: {}", e);
 				}
 		}
 		return records;
 	}
 
+	/**
+	 * Convert String to BigDecimal
+	 * 
+	 * @param amount String type
+	 * @return BigDecimal up to two decimal place (e.g 10.00)
+	 */
 	private BigDecimal convertStringToBigDecimal(String amount) {
 		double incomeAmount = Double.valueOf(amount);
 		BigDecimal amt = BigDecimal.valueOf(incomeAmount);
 		return amt.setScale(2, BigDecimal.ROUND_UP);
 	}
-
-//	public static void main(String[] args) {
-//		List<IncomeDetails> readReport = new CSVReportReader().readReport(Constant.inputFileName);
-//		readReport.stream().forEach(record -> System.out
-//				.println(record.getCity() + " " + record.getCity() + " " + record.getGender() + " "+record.getCurrency()+" "+record.getAmount()));
-//
-//	ReportWriter<List<IncomeDetails>> writer= new CSVReportWriter();
-//	writer.writeReport(Constant.outputFileName, readReport);
-//	}
 
 }
